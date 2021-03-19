@@ -1,0 +1,16 @@
+Sent packet to port:
+    (seq_num=1, ack_num=0, checksum=0, flags=0010001) 
+    Data: b'~\xa2\xb1\xef\x16G~\xa2\xb1\xef\x88\x92\x1e\x92'
+
+Received packet from port:
+    (seq_num=1, ack_num=0, checksum=0, flags=0000101) 
+    Data: b''
+
+Sent packet to port:
+    (seq_num=2, ack_num=1, checksum=0, flags=1000101) 
+    Data: b''
+
+Received packet from port:
+    (seq_num=2, ack_num=2, checksum=0, flags=1000101) 
+    Data: b''
+
