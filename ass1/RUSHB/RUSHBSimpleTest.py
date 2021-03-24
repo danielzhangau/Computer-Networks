@@ -10,7 +10,7 @@ VALID_MODES = ["SIMPLE", "NAK", "MULTI_NAK", "TIMEOUT", "MULTI_TIMEOUT", "INVALI
                     "ENCODED", "CHECKSUM", "ENCODED_CHECKSUM", "INVALID_ENCODE_VAL", "INVALID_CHECKSUM_VAL",
                     "INVALID_ENCODE_FLAG", "INVALID_CHECKSUM_FLAG"]
 
-RUSHB_TESTSUITE_VERSION = '0.6'
+RUSHB_TESTSUITE_VERSION = '1.0'
 '''
 0.1 - initial release
 0.2 - fix bug on connecting client
@@ -18,6 +18,7 @@ RUSHB_TESTSUITE_VERSION = '0.6'
 0.4 - reduce port number on client
 0.5 - fix bugs on large port number
 1.0 - official sample test suit
+1.1 - fix bugs
 '''
 
 def main(argv):
@@ -82,7 +83,7 @@ def main(argv):
             cli_proc.kill()
             return
 
-    if serv_proc.poll() is not None:
+    if serv_proc.poll() is None:
         serv_proc.kill()
 
     with open(mode+"_output.txt", "r") as f, open(os.path.join("test_files", mode + "_output.txt"), "r") as g:

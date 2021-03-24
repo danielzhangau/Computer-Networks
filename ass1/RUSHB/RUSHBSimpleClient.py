@@ -7,7 +7,7 @@ import time
 import random 
 
 
-RUSHB_TESTCLIENT_VERSION = "1.0"
+RUSHB_TESTCLIENT_VERSION = "1.1"
 '''
 0.1 - initial release
 0.2 - fix bug of encrypting
@@ -15,6 +15,7 @@ RUSHB_TESTCLIENT_VERSION = "1.0"
 0.4 - fix checksum mode
 0.5 - fix bug of encrypting in decoding
 1.0 - official sample client
+1.1 - update to match with the rep client
 '''
 
 LOCALHOST = "127.0.0.1"
@@ -197,6 +198,8 @@ class Connection:
     def send_invalid_checksum_request(self):
         """Invalid because incorrect checksum value"""
         self.send_request(key=ENC_KEY, checksum_error="ERROR", note="[INVALID CHK GET]")
+        time.sleep(1)
+        self._seq_num = 1
 
     def send_invalid_encode_request(self):
         """Invalid because incorrect encode key value"""
@@ -252,7 +255,7 @@ CHECKSUM_MODE = [Connection.chk, Connection.send_request, Connection.run]
 ENCODED_CHECKSUM_MODE = [Connection.enc, Connection.chk, Connection.send_request, Connection.run]
 
 INVALID_ENCODE_VAL_MODE = [Connection.enc, Connection.send_invalid_encode_request, Connection.run]
-INVALID_CHECKSUM_VAL_MODE = [Connection.chk, Connection.send_invalid_checksum_request, Connection.run]
+INVALID_CHECKSUM_VAL_MODE = [Connection.chk, Connection.send_invalid_checksum_request, Connection.send_request, Connection.run]
 
 INVALID_ENCODE_FLAG_MODE = [Connection.enc, Connection.send_request, Connection.invalid_enc_flag, Connection.run]
 INVALID_CHECKSUM_FLAG_MODE = [Connection.chk, Connection.send_request, Connection.invalid_chk_flag, Connection.run]
