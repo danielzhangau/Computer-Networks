@@ -1,0 +1,4 @@
+Received: (source_ip=0.0.0.0, destination_ip=0.0.0.0, offset=0, mode=1, assigned_ip=0.0.0.0)
+Sent: (source_ip=192.168.1.1, destination_ip=0.0.0.0, offset=0, mode=2, assigned_ip=192.168.1.2)
+Received: (source_ip=0.0.0.0, destination_ip=192.168.1.1, offset=0, mode=3, assigned_ip=192.168.1.2)
+Sent: (source_ip=192.168.1.1, destination_ip=192.168.1.2, offset=0, mode=4, assigned_ip=192.168.1.2)
