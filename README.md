@@ -68,7 +68,7 @@ python RUSHBAdapter.py 61606
 ```
 Examply running through RUSHB.py is below, in this example, we test the functionality of RUSHBSwitch with given RUSHBAdapter simulator.
 <p align="center">
-  <img width="300" img src="ass2/RUSHB.py–RUSHBSwitch.py.gif" />
+  <img src="ass2/RUSHB.py–RUSHBSwitch.py.gif" />
 </p>
 
 # What I learned: 
