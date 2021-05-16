@@ -16,7 +16,7 @@ Wireshark network protocol analyser.
 We are using this tool in the labs - you can download a copy for free to use on your own computer  
 https://www.wireshark.org/  
 
-## Assignment 1
+## Assignment 1 - RUSHBSvr (Application layer)
 how to run:
 ```shell
 python RUSHBSvr.py
@@ -56,6 +56,20 @@ def main(argv):
 
     conn = Connection(LOCALHOST, my_port, LOCALHOST, serv_port, output, debug_level)
 ```
+
+## Assignment 2 - RUSHBAdapater & RUSHBSwitch (Link & Network layer)
+how to run:
+```shell
+python RUSHBSwitch.py {local|global} {ip} [optional_ip] {x} {y}
+```
+RUSHBSwitch will generate a port number, say it will be 61606, then we open another terminal to run:
+```shell
+python RUSHBAdapter.py 61606
+```
+Examply running through RUSHB.py is below, in this example, we test the functionality of RUSHBSwitch with given RUSHBAdapter simulator.
+<p align="center">
+  <img width="300" img src="ass2/RUSHB.py–RUSHBSwitch.py.gif" />
+</p>
 
 # What I learned: 
 - Describe the architecture of the Internet and the functions of each component.
