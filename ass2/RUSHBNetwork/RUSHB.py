@@ -495,7 +495,7 @@ class Connection:
         # run the test using: python RUSHB.py -m SWITCH_LOCAL2_GREETING -o SWITCH_LOCAL2_GREETING.bout
         # check output using: diff SWITCH_LOCAL2_GREETING.bout test_files/SWITCH_LOCAL2_GREETING.bout
         sys.stderr.write(
-            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py] local 10.0.0.1/8 130.0.0.1/8 2 2 > {modified_test_name}.b2out\n")
+            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py local 10.0.0.1/8 130.0.0.1/8 2 2 > {modified_test_name}.b2out\n")
         sys.stderr.flush()
         file_path = f"{modified_test_name}.b2out"
         udp_info = get_info_file(file_path)
@@ -546,7 +546,7 @@ class Connection:
             port_writer.write(f"connect {str(port)}\n")
             port_writer.flush()
         sys.stderr.write(
-            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py] local 192.168.1.1/24 0 2 < SWITCH_FORWARD_MESSAGE.b2in > SWITCH_FORWARD_MESSAGE.b2out\n")
+            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py local 192.168.1.1/24 0 2 < SWITCH_FORWARD_MESSAGE.b2in > SWITCH_FORWARD_MESSAGE.b2out\n")
         sys.stderr.flush()
         tcp_sock.listen()
         conn, addr = tcp_sock.accept()
@@ -598,7 +598,7 @@ class Connection:
             port_writer.flush()
 
         sys.stderr.write(
-            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py] local 192.168.1.1/24 0 2 < {modified_test_name}.b2in > {modified_test_name}.b2out\n")
+            f"Run your switch with these argument:\n\t[./RUSHBSwitch | java RUSHBSwitch | python RUSHBSwitch.py local 192.168.1.1/24 0 2 < {modified_test_name}.b2in > {modified_test_name}.b2out\n")
         sys.stderr.flush()
         tcp_sock_1.listen()
         conn_1, addr_1 = tcp_sock_1.accept()
