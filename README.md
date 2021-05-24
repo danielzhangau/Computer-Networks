@@ -17,6 +17,8 @@ We are using this tool in the labs - you can download a copy for free to use on 
 https://www.wireshark.org/  
 
 ## Assignment 1 - RUSHBSvr (Application layer)
+My task is to develop a **network server** capable of sending messages to a client that comply with the desired protocol.  
+Each process (a running instance) of RUSHBServer will simulate file storage server. When your server receives a client’s file request, it should locate the requested file in its local working directory and return the file contents over one or more packets. When complete, the server should close the connection with the guest that have sent the file. Your server also needs to be capable of simultaneously dealing with multiple clients. The server should try its best on improving the flow-control and guaranteeing the clients to get all the content reliably and uncorrupted by using the company’s selected protocol, RUSHB (Reliable UDP Substitute for HTTP Beta).  
 how to run:
 ```shell
 python RUSHBSvr.py
