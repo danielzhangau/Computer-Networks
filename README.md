@@ -61,15 +61,19 @@ def main(argv):
 
 ## Assignment 2 - RUSHBAdapater & RUSHBSwitch (Link & Network layer)
 This assignment introduces the use of Network Layer and Link Layer (from OSI Models) as well as socket programming (simulation) on each of these devices: adapters, switches and routers. After finishing the assignment, I understanded how data is sent throughout the internet.  
+
 <p align="center">
   <img src="ass2/network_layer_mapping.png" />
 </p>
-RUSHBAdapter is supposed to work as an adapter for one process only through TCP (e.g. RUSHBSvr). The process that connects to RUSHBAdapter needs to open a socket under localhost (127.0.0.1) as a listener under an available port (assigned by the kernel). However, in this assignment, the RUSHBAdapter is not required to listen to any processes, instead, it will listen to stdin (see the figure below).  
-RUSHBSwitch works like a network router, and it can be local or global. A local RUSHBSwitch can listen to many RUSHBAdapter through a UDP and connect to many global RUSHBSwitches through TCP. In the meantime, the global RUSHBSwitch cannot listen to any RUSHBAdapter, but can connect to other RUSHBSwitches. This is a diagram explaining how RUSHBAdapters and RUSHBSwitches are connected:
+
+**RUSHBAdapter** is supposed to work as an adapter for one process only through TCP (e.g. RUSHBSvr). The process that connects to RUSHBAdapter needs to open a socket under localhost (127.0.0.1) as a listener under an available port (assigned by the kernel). However, in this assignment, the RUSHBAdapter is not required to listen to any processes, instead, it will listen to stdin (see the figure below).   
+**RUSHBSwitch** works like a network router, and it can be local or global. A local RUSHBSwitch can listen to many RUSHBAdapter through a UDP and connect to many global RUSHBSwitches through TCP. In the meantime, the global RUSHBSwitch cannot listen to any RUSHBAdapter, but can connect to other RUSHBSwitches. This is a diagram explaining how RUSHBAdapters and RUSHBSwitches are connected:  
+
 <p align="center">
   <img src="ass2/End-to-end_connectio_in_RUSHB.png" />
 </p>
-The final goal for this programming assignment is sending and receiving data across the global network without losses and errors. Data can be anything that can attached to the adapter, such as netcat, or RUSHBSvr, or even stdin (as in this assignment). 
+
+The final goal for this programming assignment is sending and receiving data across the global network without losses and errors. Data can be anything that can attached to the adapter, such as netcat, or RUSHBSvr, or even stdin (as in this assignment).  
 
 how to run:
 ```shell
