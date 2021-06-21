@@ -1,15 +1,15 @@
 # Computer Networks
 UQ COMS
 
-OSI & Internet reference models. Communication protocols for Local, Metropolitan & Wide Area Networks. BISDN networks. The Internet protocol suite. Mobile Networks. Quality of service in communication protocols. Network security. Trends in communication networks.
-The course is based around the Internet protocol stack and works through the layer of the protocols.
-Firstly, fundamental principles and metrics for computer networking are described, and the overall architecture of the Internet is described.
-The application layer looks at protocols such as HTTP, DNS, SMTP.
-The transport layer looks at UDP and TCP.
-The network layer looks at IPv4, IPv6, and routing algorithms and protocols.
-The Link Layer looks at Ethernet, Link layer Addressing, and ARP.
-The physical layer is not considered in detail.
-
+OSI & Internet reference models. Communication protocols for Local, Metropolitan & Wide Area Networks. BISDN networks. The Internet protocol suite. Mobile Networks. Quality of service in communication protocols. Network security. Trends in communication networks.  
+The course is based around the Internet protocol stack and works through the layer of the protocols.  
+Firstly, fundamental principles and metrics for computer networking are described, and the overall architecture of the Internet is described.  
+The application layer looks at protocols such as HTTP, DNS, SMTP.  
+The transport layer looks at UDP and TCP.  
+The network layer looks at IPv4, IPv6, and routing algorithms and protocols.  
+The Link Layer looks at Ethernet, Link layer Addressing, and ARP.  
+The physical layer is not considered in detail.  
+  
 ## Helpful learning resources
 • Computer Networking: A Top-Down Approach, 7th Edition (2017) James F. Kurose, University of Massachusetts, Amherst Keith W. Ross, Polytechnic University, Brooklyn
 Wireshark network protocol analyser.  
@@ -17,6 +17,8 @@ We are using this tool in the labs - you can download a copy for free to use on 
 https://www.wireshark.org/  
 
 ## Assignment 1 - RUSHBSvr (Application layer)
+My task is to develop a **network server** capable of sending messages to a client that comply with the desired protocol.  
+Each process (a running instance) of RUSHBServer will simulate file storage server. When your server receives a client’s file request, it should locate the requested file in its local working directory and return the file contents over one or more packets. When complete, the server should close the connection with the guest that have sent the file. Your server also needs to be capable of simultaneously dealing with multiple clients. The server should try its best on improving the flow-control and guaranteeing the clients to get all the content reliably and uncorrupted by using the company’s selected protocol, RUSHB (Reliable UDP Substitute for HTTP Beta).  
 how to run:
 ```shell
 python RUSHBSvr.py
@@ -59,15 +61,19 @@ def main(argv):
 
 ## Assignment 2 - RUSHBAdapater & RUSHBSwitch (Link & Network layer)
 This assignment introduces the use of Network Layer and Link Layer (from OSI Models) as well as socket programming (simulation) on each of these devices: adapters, switches and routers. After finishing the assignment, I understanded how data is sent throughout the internet.  
+
 <p align="center">
   <img src="ass2/network_layer_mapping.png" />
 </p>
-RUSHBAdapter is supposed to work as an adapter for one process only through TCP (e.g. RUSHBSvr). The process that connects to RUSHBAdapter needs to open a socket under localhost (127.0.0.1) as a listener under an available port (assigned by the kernel). However, in this assignment, the RUSHBAdapter is not required to listen to any processes, instead, it will listen to stdin (see the figure below).  
-RUSHBSwitch works like a network router, and it can be local or global. A local RUSHBSwitch can listen to many RUSHBAdapter through a UDP and connect to many global RUSHBSwitches through TCP. In the meantime, the global RUSHBSwitch cannot listen to any RUSHBAdapter, but can connect to other RUSHBSwitches. This is a diagram explaining how RUSHBAdapters and RUSHBSwitches are connected:
+
+**RUSHBAdapter** is supposed to work as an adapter for one process only through TCP (e.g. RUSHBSvr). The process that connects to RUSHBAdapter needs to open a socket under localhost (127.0.0.1) as a listener under an available port (assigned by the kernel). However, in this assignment, the RUSHBAdapter is not required to listen to any processes, instead, it will listen to stdin (see the figure below).   
+**RUSHBSwitch** works like a network router, and it can be local or global. A local RUSHBSwitch can listen to many RUSHBAdapter through a UDP and connect to many global RUSHBSwitches through TCP. In the meantime, the global RUSHBSwitch cannot listen to any RUSHBAdapter, but can connect to other RUSHBSwitches. This is a diagram explaining how RUSHBAdapters and RUSHBSwitches are connected:  
+
 <p align="center">
   <img src="ass2/End-to-end_connectio_in_RUSHB.png" />
 </p>
-The final goal for this programming assignment is sending and receiving data across the global network without losses and errors. Data can be anything that can attached to the adapter, such as netcat, or RUSHBSvr, or even stdin (as in this assignment). 
+
+The final goal for this programming assignment is sending and receiving data across the global network without losses and errors. Data can be anything that can attached to the adapter, such as netcat, or RUSHBSvr, or even stdin (as in this assignment).  
 
 how to run:
 ```shell
